@@ -3,32 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <title>Bonescrew - Audio</title>
-  <meta name="description" content="Bonescrew Audio" />
+  <meta name="description" content="Bonescrew Audio Tracks" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
+    body {
       background-color: #000;
       color: #fff;
       font-family: Arial, sans-serif;
-    }
-
-    #container {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      margin: 0;
     }
 
     header {
-      background-color: #000;
-      padding: 1rem;
       text-align: center;
+      padding: 1rem;
     }
 
     header img {
@@ -64,31 +52,29 @@
     }
 
     main {
-      flex: 1;
-      padding: 2rem 1rem;
-      background-color: #000;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      padding: 2rem;
+      text-align: center;
     }
 
     .audio-block {
-      margin-bottom: 2rem;
-      width: 100%;
+      margin: 2rem auto;
       max-width: 600px;
-      text-align: center;
+    }
+
+    .audio-block h1 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
     }
 
     audio {
       width: 100%;
-      margin-top: 0.5rem;
     }
 
     footer {
-      background-color: #000;
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
+      background-color: #000;
     }
   </style>
 </head>
@@ -107,82 +93,19 @@
     </nav>
 
     <main>
-      <div class="audio-block">
-        <h1>Purge</h1>
-        <audio controls>
-          <source src="audio/purge.mp3" type="audio/mpeg" />
-        </audio>
-      </div>
+      <h1>Bonescrew Audio Tracks</h1>
 
-      <div class="audio-block">
-        <h1>Dust</h1>
-        <audio controls>
-          <source src="audio/dust.mp3" type="audio/mpeg" />
-        </audio>
-      </div>
-
-      <div class="audio-block">
-        <h1>Ask for Nothing</h1>
-        <audio controls>
-          <source src="audio/afn.mp3" type="audio/mpeg" />
-        </audio>
-      </div>
-
-      <div class="audio-block">
-        <h1>Open Wound</h1>
-        <audio controls>
-          <source src="audio/openwound.mp3" type="audio/mpeg" />
-        </audio>
-      </div>
-
-      <div class="audio-block">
-        <h1>Perpetual Decline</h1>
-        <audio controls>
-          <source src="audio/PerpetualDecline.mp3" type="audio/mpeg" />
-        </audio>
-      </div>
-
-      <div class="audio-block">
-        <h1>It's Raining</h1>
-        <audio controls>
-          <source src="audio/itsraining.mp3" type="audio/mpeg" />
-        </audio>
-      </div>
-
-      <div class="audio-block">
-        <h1>I'll Get Mine</h1>
-        <audio controls>
-          <source src="audio/igm.mp3" type="audio/mpeg" />
-        </audio>
-      </div>
-
-      <div class="audio-block">
-        <h1>New World Orbit</h1>
-        <audio controls>
-          <source src="audio/nwo.mp3" type="audio/mpeg" />
-        </audio>
-      </div>
-
-      <div class="audio-block">
-        <h1>Collapsed</h1>
-        <audio controls>
-          <source src="audio/collapsed.mp3" type="audio/mpeg" />
-        </audio>
-      </div>
-
-      <div class="audio-block">
-        <h1>Innocence</h1>
-        <audio controls>
-          <source src="audio/Innocence.mp3" type="audio/mpeg" />
-        </audio>
-      </div>
-
-      <div class="audio-block">
-        <h1>Tomb with a View</h1>
-        <audio controls>
-          <source src="audio/tombwithaview.mp3" type="audio/mpeg" />
-        </audio>
-      </div>
+      <div class="audio-block"><h1>Purge</h1><audio controls><source src="audio/purge.mp3" type="audio/mpeg" /></audio></div>
+      <div class="audio-block"><h1>Dust</h1><audio controls><source src="audio/dust.mp3" type="audio/mpeg" /></audio></div>
+      <div class="audio-block"><h1>Ask for Nothing</h1><audio controls><source src="audio/afn.mp3" type="audio/mpeg" /></audio></div>
+      <div class="audio-block"><h1>Open Wound</h1><audio controls><source src="audio/openwound.mp3" type="audio/mpeg" /></audio></div>
+      <div class="audio-block"><h1>Perpetual Decline</h1><audio controls><source src="audio/PerpetualDecline.mp3" type="audio/mpeg" /></audio></div>
+      <div class="audio-block"><h1>It's Raining</h1><audio controls><source src="audio/itsraining.mp3" type="audio/mpeg" /></audio></div>
+      <div class="audio-block"><h1>I'll Get Mine</h1><audio controls><source src="audio/igm.mp3" type="audio/mpeg" /></audio></div>
+      <div class="audio-block"><h1>New World Orbit</h1><audio controls><source src="audio/nwo.mp3" type="audio/mpeg" /></audio></div>
+      <div class="audio-block"><h1>Collapsed</h1><audio controls><source src="audio/collapsed.mp3" type="audio/mpeg" /></audio></div>
+      <div class="audio-block"><h1>Innocence</h1><audio controls><source src="audio/Innocence.mp3" type="audio/mpeg" /></audio></div>
+      <div class="audio-block"><h1>Tomb with a View</h1><audio controls><source src="audio/tombwithaview.mp3" type="audio/mpeg" /></audio></div>
     </main>
 
     <footer>
