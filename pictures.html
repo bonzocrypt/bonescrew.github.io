@@ -4,31 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bonescrew - Pictures</title>
-  <meta name="description" content="Bonescrew Pictures" />
+  <meta name="description" content="Bonescrew Picture Gallery" />
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   <style>
-    * {
+    body {
       margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
+      font-family: Arial, sans-serif;
       background-color: #000;
       color: #fff;
-      font-family: Arial, sans-serif;
     }
 
-    #container {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    header {
-      background-color: #000;
-      padding: 1rem;
+    header, footer {
       text-align: center;
+      padding: 1rem;
     }
 
     header img {
@@ -37,61 +25,61 @@
     }
 
     nav {
-      background-color: #000;
-    }
-
-    nav ul {
-      list-style: none;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      padding: 0;
-      margin: 0;
-    }
-
-    nav li {
-      margin: 0.5rem;
+      flex-wrap: wrap;
+      background-color: #000;
+      gap: 1rem;
+      padding: 1rem;
     }
 
     nav a {
       color: #fff;
       text-decoration: none;
-      padding: 0.5rem 1rem;
       border: 1px solid #fff;
-      border-radius: 4px;
-      transition: background-color 0.3s;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: background 0.3s;
     }
 
     nav a:hover {
-      background-color: #fff;
+      background: #fff;
       color: #000;
     }
 
     main {
-      flex: 1;
       padding: 2rem 1rem;
-      text-align: center;
-    }
-
-    .photo-gallery {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 2rem;
-      margin-top: 2rem;
     }
 
-    .photo-gallery img {
-      max-width: 90%;
-      height: auto;
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .photo {
+      width: 100%;
+      max-width: 250px;
+      text-align: center;
+    }
+
+    .photo img {
+      width: 100%;
       border-radius: 8px;
       border: 1px solid #444;
     }
 
+    .photo input[type="checkbox"] {
+      margin-top: 0.5rem;
+    }
+
     footer {
-      background-color: #000;
-      text-align: center;
-      padding: 1rem;
       font-size: 0.9rem;
     }
   </style>
@@ -103,19 +91,16 @@
     </header>
 
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="audio.html">Audio</a></li>
-        <li><a href="pictures.html">Pictures</a></li>
-        <li><a href="videos.html">Videos</a></li>
-      </ul>
+      <a href="index.html">Home</a>
+      <a href="audio.html">Audio</a>
+      <a href="pictures.html">Pictures</a>
+      <a href="videos.html">Videos</a>
     </nav>
 
     <main>
-      <h1>Coming Soon...</h1>
-      <div class="photo-gallery">
-        <img src="images/h3.jpg" alt="Bonescrew Live Photo" />
-        <!-- Add more <img> tags here as you add new pictures -->
+      <h1>Picture Gallery</h1>
+      <div class="gallery" id="gallery">
+        <!-- Images will be injected here -->
       </div>
     </main>
 
@@ -123,5 +108,31 @@
       © 2000 Bonescrew. All Rights Reserved.
     </footer>
   </div>
+
+  <script>
+    fetch("https://api.github.com/repos/bonzocrypt/bonescrew.github.io/contents/images")
+      .then((res) => res.json())
+      .then((files) => {
+        const gallery = document.getElementById("gallery");
+        files.forEach((file) => {
+          if (file.type === "file" && /\.(jpe?g|png|gif|webp)$/i.test(file.name)) {
+            const div = document.createElement("div");
+            div.className = "photo";
+            div.innerHTML = `
+              <img src="${file.download_url}" alt="${file.name}" />
+              <div>
+                <input type="checkbox" id="${file.name}" name="keep" />
+                <label for="${file.name}">${file.name}</label>
+              </div>
+            `;
+            gallery.appendChild(div);
+          }
+        });
+      })
+      .catch((err) => {
+        document.getElementById("gallery").innerText = "Unable to load images.";
+        console.error(err);
+      });
+  </script>
 </body>
 </html>
