@@ -79,6 +79,17 @@
       margin-top: 0.5rem;
     }
 
+    #hiddenList {
+      margin: 2rem;
+      text-align: center;
+    }
+
+    #hiddenList textarea {
+      width: 90%;
+      max-width: 600px;
+      font-family: monospace;
+    }
+
     footer {
       font-size: 0.9rem;
     }
@@ -102,6 +113,10 @@
       <div class="gallery" id="gallery">
         <!-- Images will be injected here -->
       </div>
+
+      <button onclick="hideSelected()" style="margin: 2rem; padding: 0.5rem 1rem;">Hide Selected</button>
+
+      <div id="hiddenList"></div>
     </main>
 
     <footer>
@@ -118,6 +133,7 @@
           if (file.type === "file" && /\.(jpe?g|png|gif|webp)$/i.test(file.name)) {
             const div = document.createElement("div");
             div.className = "photo";
+            div.setAttribute("data-filename", file.name);
             div.innerHTML = `
               <img src="${file.download_url}" alt="${file.name}" />
               <div>
@@ -133,6 +149,26 @@
         document.getElementById("gallery").innerText = "Unable to load images.";
         console.error(err);
       });
+
+    function hideSelected() {
+      const hidden = [];
+      document.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
+        const photoDiv = checkbox.closest('.photo');
+        if (photoDiv) {
+          hidden.push(photoDiv.getAttribute("data-filename"));
+          photoDiv.remove();
+        }
+      });
+
+      if (hidden.length > 0) {
+        const listDiv = document.getElementById("hiddenList");
+        listDiv.innerHTML = `
+          <h2>Hidden Files</h2>
+          <textarea rows="10" readonly>${hidden.join('\n')}</textarea>
+          <p>Copy and paste this list to ChatGPT if you'd like a clean gallery generated without them.</p>
+        `;
+      }
+    }
   </script>
 </body>
 </html>
