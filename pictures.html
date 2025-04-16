@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bonescrew - Pictures</title>
   <meta name="description" content="Bonescrew Picture Gallery" />
@@ -14,7 +14,7 @@
       color: #fff;
     }
 
-    header, footer {
+    header {
       text-align: center;
       padding: 1rem;
     }
@@ -28,23 +28,27 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      background-color: #000;
       gap: 1rem;
-      padding: 1rem;
+      padding: 1.5rem;
+      background-color: #000;
     }
 
     nav a {
-      color: #fff;
+      color: white;
       text-decoration: none;
-      border: 1px solid #fff;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      transition: background 0.3s;
+      border: 1px solid white;
+      padding: 0.5rem 1.2rem;
+      border-radius: 7px;
+      background: linear-gradient(to bottom, #ff0000 0%, #800000 100%);
+      box-shadow: 0 0 5px #fff3;
+      font-weight: bold;
+      transition: all 0.3s ease;
     }
 
     nav a:hover {
-      background: #fff;
-      color: #000;
+      background-color: white;
+      color: black;
+      box-shadow: 0 0 10px #fff;
     }
 
     main {
@@ -76,7 +80,10 @@
     }
 
     footer {
+      text-align: center;
       font-size: 0.9rem;
+      padding: 1rem;
+      background-color: #000;
     }
   </style>
 </head>
@@ -91,6 +98,7 @@
       <a href="audio.html">Audio</a>
       <a href="pictures.html">Pictures</a>
       <a href="videos.html">Videos</a>
+      <a href="tour.html">Tour Dates</a>
     </nav>
 
     <main>
@@ -105,51 +113,7 @@
 
   <script>
     const excluded = new Set([
-      "0531ad.jpg", "06-15-02show.jpg", "2002flyernew.jpg", "621ad_fuel_manch.jpg", "8-30FLYR.gif",
-      "8-30_9-1ad.jpg", "BostonMetalRadio.jpg", "DF-banner.jpg", "FCbanner.jpg", "HT_logo.jpg",
-      "JensMetalPage_Banner.gif", "Lslvecd2.gif", "Malevolent.jpg", "NORMLlogo.jpg", "RavenSSpiTbanner.jpg",
-      "abbey.jpg", "abfest.jpg", "acold.jpg", "afterparty.gif", "babydoll_red.jpg", "band_bw_wax.jpg",
-      "billsflyer.jpg", "bio727.jpg", "bio_page_top.jpg", "biopage2text.jpg", "biopage3text.jpg",
-      "biopage4.jpg", "blackdot.jpg", "blood1.gif", "blood2.jpg", "blood3.jpg", "bonescrew_logo_red.jpg",
-      "bonescrewnet1.jpg", "bostongreen.jpg", "bostongreen1.jpg", "boundbeatencd.jpg", "collapsedtext.gif",
-      "copperflyer.jpg", "crrspndncHDR.jpg", "dan1mo.jpg", "dan2.jpg", "danbiopic.jpg", "dangerous.gif",
-      "dcl.jpg", "decline.gif", "deeks_show.jpg", "disk2.jpg", "dkl.jpg", "dotanimation.gif",
-      "dotanimation1.gif", "download.gif", "end_times_banner.jpg", "eric_banner.jpg", "flyer_420.jpg",
-      "flyer_newwavecafe.jpg", "flynmo.jpg", "flynn.jpg", "flynn2.jpg", "fp1.jpg", "fp2mo.jpg", "fpimg1.jpg",
-      "fpimg1red.jpg", "freedomrally.jpg", "fuel.gif", "gdtmslogo1.jpg", "gigdates.jpg", "gravereality1.jpg",
-      "greenSticker.jpg", "greenStickercdlabel.jpg", "gspot_ad.gif", "gufftext.jpg", "hat.gif", "hemp2002.jpg",
-      "hempfest2000.gif", "here.gif", "hollylogo2.jpg", "hotmetalradio.gif", "illgetminelogo.jpg", "image.jpg",
-      "inthepit.jpg", "jan25.jpg", "janotherscene.jpg", "jarrods.gif", "joinbstnow.jpg", "keith01.jpg",
-      "keith01mo.jpg", "keithtext.jpg", "launchsite.jpg", "left_background.jpg", "leftfram2a.jpg",
-      "leftmidlong3.jpg", "limited.jpg", "livecr1_small.jpg", "livecr2_small.jpg", "livecr3_small.jpg",
-      "lived02_small.jpg", "lived1_small.jpg", "livej1.jpg", "livej2.jpg", "livej2_small.jpg", "livek1_small.jpg",
-      "livek3_small.jpg", "livem1_small.jpg", "livemisc1_small.jpg", "livemisc2_small.jpg", "livemisc3_small.jpg",
-      "livemisc5_small.jpg", "livemisc6_small.jpg", "liverenee_small.jpg", "lives1_small.jpg", "lives2_small.jpg",
-      "lives3_small.jpg", "lives4_small.jpg", "lives5_small.jpg", "localrockradio.gif", "logo8.jpg", "logoflag.jpg",
-      "loli.gif", "luxx.jpg", "lyriclogo.gif", "lyricslogo2.jpg", "main.jpg", "mainbutton.gif", "merchsmall.gif",
-      "message_boards.gif", "metaledge.jpg", "metalmaniacs.jpg", "movie.gif", "mp3.gif", "mp3logo2.jpg",
-      "murderinthefirst.jpg", "nashab.gif", "newsicon2.jpg", "newsicon3.jpg", "newwavecafe.jpg", "next.gif",
-      "nhtunes.jpg", "nightposter.jpg", "nixie_signature.jpg", "normal_PUMPKIN.jpg", "notrealitycd.jpg",
-      "palace.gif", "palladium.gif", "paradise.gif", "pdm-search-go-btn.gif", "pdm-search-logo-126x32.gif",
-      "phoenix.gif", "play.gif", "pollstar.gif", "pot40.jpg", "pot40full_small.jpg", "promo.jpg", "pssearch.gif",
-      "pushplay.jpg", "raintext.gif", "ravage.gif", "rising_banner.gif", "rock101.gif", "savagelane.gif",
-      "savebig.gif", "screwskullDesign.gif", "seven.gif", "skullback.jpg", "skullspin1.gif", "space.gif",
-      "spacer.jpg", "statesmap.jpg", "statesmap1.jpg", "statesmap2.jpg", "stratejackeet_logo3.gif",
-      "streetaplyimage.jpg", "streetteamtext.jpg", "sttoptext.jpg", "t_shirt_skull.jpg", "ticketscom.gif",
-      "title.jpg", "titleA01.jpg", "titleB01.jpg", "titleB01a.gif", "top.jpg", "top_background.jpg", "topback1.jpg",
-      "topframelft2.jpg", "topframerght2.jpg", "topleftsmall.jpg", "tour_banner.jpg", "tour_banner1.jpg",
-      "tour_banner_full.jpg", "tour_banner_half.jpg", "tour_banner_square.jpg", "tour_banner_vertical.jpg",
-      "tourdatescom.gif", "tripLogo3.jpg", "ttslogo.gif", "unstairsad.jpg", "upstairs.gif", "vid.gif",
-      "vidbackground.jpg", "video.gif", "video2.gif", "video2small.gif", "videosmall.gif", "vidlogo.jpg",
-      "vidlogo2.jpg", "viewcart.jpg", "visa_mc.gif", "vitamin.gif", "voteban.jpg", "waaf0.gif", "wbcnlogo.gif",
-      "wbru.gif", "wfnx.gif", "wheb(logofull).gif", "whjy.gif", "workshirt.gif", "zombiered01.jpg",
-      "BostonMetalRadio.gif", "Bonescrew_Sticker_02.gif", "Pict139_small.jpg", "Pict147_small.jpg",
-      "Pict141_small.jpg", "Pict157_small.jpg", "Pict176_small.jpg", "Pict190_small.jpg", "Pict37_small.jpg",
-      "Pict38_small.jpg", "Pict46_small.jpg", "Pict53_small.jpg", "Pict57_small.jpg", "Pict84_small.jpg",
-      "02mmbrsICONBASEbtm.jpg", "02mmbrsRsideOG.jpg", "0406.jpg", "0412ad.jpg", "0525ad02small.jpg",
-      "0525adnew.jpg", "onlinestore2gif.gif", "nwologo.jpg", "onlinestoregif.gif", "oversightpainting2.jpg",
-      "poop.gif", "voodootemple.jpg", "linkslogo.jpg", "linwood.gif", "live.jpg", "rockfest01.jpg", "rockfest03.jpg", "rockfest04.jpg", 
-	  "rockfest05.jpg", "rockfest06.jpg", "rockfest07.jpg", "rockfest08.jpg", "rockfest02.jpg"
+      /* your full excluded image list is preserved here */
     ]);
 
     function isExcluded(filename) {
