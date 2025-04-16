@@ -75,21 +75,6 @@
       border: 1px solid #444;
     }
 
-    .photo input[type="checkbox"] {
-      margin-top: 0.5rem;
-    }
-
-    #hiddenList {
-      margin: 2rem;
-      text-align: center;
-    }
-
-    #hiddenList textarea {
-      width: 90%;
-      max-width: 600px;
-      font-family: monospace;
-    }
-
     footer {
       font-size: 0.9rem;
     }
@@ -113,10 +98,6 @@
       <div class="gallery" id="gallery">
         <!-- Images will be injected here -->
       </div>
-
-      <button onclick="hideSelected()" style="margin: 2rem; padding: 0.5rem 1rem;">Hide Selected</button>
-
-      <div id="hiddenList"></div>
     </main>
 
     <footer>
@@ -125,50 +106,118 @@
   </div>
 
   <script>
-    fetch("https://api.github.com/repos/bonzocrypt/bonescrew.github.io/contents/images")
-      .then((res) => res.json())
-      .then((files) => {
-        const gallery = document.getElementById("gallery");
-        files.forEach((file) => {
-          if (file.type === "file" && /\.(jpe?g|png|gif|webp)$/i.test(file.name)) {
-            const div = document.createElement("div");
-            div.className = "photo";
-            div.setAttribute("data-filename", file.name);
-            div.innerHTML = `
-              <img src="${file.download_url}" alt="${file.name}" />
-              <div>
-                <input type="checkbox" id="${file.name}" name="keep" />
-                <label for="${file.name}">${file.name}</label>
-              </div>
-            `;
-            gallery.appendChild(div);
-          }
-        });
-      })
-      .catch((err) => {
-        document.getElementById("gallery").innerText = "Unable to load images.";
-        console.error(err);
-      });
-
-    function hideSelected() {
-      const hidden = [];
-      document.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
-        const photoDiv = checkbox.closest('.photo');
-        if (photoDiv) {
-          hidden.push(photoDiv.getAttribute("data-filename"));
-          photoDiv.remove();
-        }
-      });
-
-      if (hidden.length > 0) {
-        const listDiv = document.getElementById("hiddenList");
-        listDiv.innerHTML = `
-          <h2>Hidden Files</h2>
-          <textarea rows="10" readonly>${hidden.join('\n')}</textarea>
-          <p>Copy and paste this list to ChatGPT if you'd like a clean gallery generated without them.</p>
-        `;
-      }
-    }
-  </script>
-</body>
-</html>
+    const excludedImages = [
+      "02mmbrsICONBASEbtm.jpg",
+      "02mmbrsRsideOG.jpg",
+      "0406.jpg",
+      "0412ad.jpg",
+      "0525ad02small.jpg",
+      "0525adnew.jpg",
+      "0531ad.jpg",
+      "06-15-02show.jpg",
+      "2002flyernew.jpg",
+      "621ad_fuel_manch.jpg",
+      "8-30FLYR.gif",
+      "8-30_9-1ad.jpg",
+      "BostonMetalRadio.jpg",
+      "DF-banner.jpg",
+      "FCbanner.jpg",
+      "HT_logo.jpg",
+      "JensMetalPage_Banner.gif",
+      "Lslvecd2.gif",
+      "Malevolent.jpg",
+      "NORMLlogo.jpg",
+      "RavenSSpiTbanner.jpg",
+      "abbey.jpg",
+      "abfest.jpg",
+      "acold.jpg",
+      "afterparty.gif",
+      "babydoll_red.jpg",
+      "band_bw_wax.jpg",
+      "billsflyer.jpg",
+      "bio727.jpg",
+      "bio_page_top.jpg",
+      "biopage2text.jpg",
+      "biopage3text.jpg",
+      "biopage4.jpg",
+      "blackdot.jpg",
+      "blood1.gif",
+      "blood2.jpg",
+      "blood3.jpg",
+      "bonescrew_logo_red.jpg",
+      "bonescrewnet1.jpg",
+      "bostongreen.jpg",
+      "bostongreen1.jpg",
+      "boundbeatencd.jpg",
+      "collapsedtext.gif",
+      "copperflyer.jpg",
+      "crrspndncHDR.jpg",
+      "dan1mo.jpg",
+      "dan2.jpg",
+      "danbiopic.jpg",
+      "dangerous.gif",
+      "dcl.jpg",
+      "decline.gif",
+      "deeks_show.jpg",
+      "disk2.jpg",
+      "dkl.jpg",
+      "dotanimation.gif",
+      "dotanimation1.gif",
+      "download.gif",
+      "end_times_banner.jpg",
+      "eric_banner.jpg",
+      "flyer_420.jpg",
+      "flyer_newwavecafe.jpg",
+      "flynmo.jpg",
+      "flynn.jpg",
+      "flynn2.jpg",
+      "fp1.jpg",
+      "fp2mo.jpg",
+      "fpimg1.jpg",
+      "fpimg1red.jpg",
+      "freedomrally.jpg",
+      "fuel.gif",
+      "gdtmslogo1.jpg",
+      "gigdates.jpg",
+      "gravereality1.jpg",
+      "greenSticker.jpg",
+      "greenStickercdlabel.jpg",
+      "gspot_ad.gif",
+      "gufftext.jpg",
+      "hat.gif",
+      "hemp2002.jpg",
+      "hempfest2000.gif",
+      "here.gif",
+      "hollylogo2.jpg",
+      "hotmetalradio.gif",
+      "illgetminelogo.jpg",
+      "image.jpg",
+      "inthepit.jpg",
+      "jan25.jpg",
+      "janotherscene.jpg",
+      "jarrods.gif",
+      "joinbstnow.jpg",
+      "keith01.jpg",
+      "keith01mo.jpg",
+      "keithtext.jpg",
+      "launchsite.jpg",
+      "left_background.jpg",
+      "leftfram2a.jpg",
+      "leftmidlong3.jpg",
+      "limited.jpg",
+      "livecr1_small.jpg",
+      "livecr2_small.jpg",
+      "livecr3_small.jpg",
+      "lived02_small.jpg",
+      "lived1_small.jpg",
+      "livej1.jpg",
+      "livej2.jpg",
+      "livej2_small.jpg",
+      "livek1_small.jpg",
+      "livek3_small.jpg",
+      "livem1_small.jpg",
+      "livemisc1_small.jpg",
+      "livemisc2_small.jpg",
+      "liv
+::contentReference[oaicite:3]{index=3}
+ 
