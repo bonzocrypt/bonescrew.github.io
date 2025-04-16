@@ -2,33 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bonescrew - Videos</title>
   <meta name="description" content="Bonescrew Videos" />
-  <link rel="icon" href="https://raw.githubusercontent.com/bonzocrypt/bonescrew.github.io/main/images/favicon.ico" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
+    body {
       background-color: #000;
       color: #fff;
       font-family: Arial, sans-serif;
-    }
-
-    #container {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      margin: 0;
     }
 
     header {
-      background-color: #000;
-      padding: 1rem;
       text-align: center;
+      padding: 1rem;
     }
 
     header img {
@@ -37,40 +25,34 @@
     }
 
     nav {
-      background-color: #000;
-    }
-
-    nav ul {
-      list-style: none;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      padding: 0;
-      margin: 0;
-    }
-
-    nav li {
-      margin: 0.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1.5rem;
+      background-color: #000;
     }
 
     nav a {
-      color: #fff;
+      color: white;
       text-decoration: none;
-      padding: 0.5rem 1rem;
-      border: 1px solid #fff;
-      border-radius: 4px;
-      transition: background-color 0.3s;
+      border: 1px solid white;
+      padding: 0.5rem 1.2rem;
+      border-radius: 7px;
+      background: linear-gradient(to bottom, #ff0000 0%, #800000 100%);
+      box-shadow: 0 0 5px #fff3;
+      font-weight: bold;
+      transition: all 0.3s ease;
     }
 
     nav a:hover {
-      background-color: #fff;
-      color: #000;
+      background: white;
+      color: black;
+      box-shadow: 0 0 10px #fff;
     }
 
     main {
-      flex: 1;
       padding: 2rem 1rem;
-      background-color: #000;
       text-align: center;
     }
 
@@ -118,16 +100,15 @@
 <body>
   <div id="container">
     <header>
-      <img src="https://raw.githubusercontent.com/bonzocrypt/bonescrew.github.io/main/images/bonescrew_logo_red.jpg" alt="Bonescrew Logo" />
+      <img src="images/bonescrew_logo_red.jpg" alt="Bonescrew Logo" />
     </header>
 
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="audio.html">Audio</a></li>
-        <li><a href="pictures.html">Pictures</a></li>
-        <li><a href="videos.html">Videos</a></li>
-      </ul>
+      <a href="index.html">Home</a>
+      <a href="audio.html">Audio</a>
+      <a href="pictures.html">Pictures</a>
+      <a href="videos.html">Videos</a>
+      <a href="tour.html">Tour Dates</a>
     </nav>
 
     <main>
@@ -138,6 +119,7 @@
       <iframe src="https://www.youtube.com/embed/XLEik2JacJA" title="Bonescrew Video 3" allowfullscreen></iframe>
 
       <div class="pagination">
+        <a href="#">«</a>
         <a href="videos.html" class="active">1</a>
         <a href="vid2.html">2</a>
         <a href="vid3.html">3</a>
