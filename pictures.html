@@ -9,9 +9,9 @@
   <style>
     body {
       margin: 0;
+      font-family: Arial, sans-serif;
       background-color: #000;
       color: #fff;
-      font-family: Arial, sans-serif;
     }
 
     header {
@@ -112,14 +112,18 @@
   </div>
 
   <script>
-    const excluded = new Set([
-      // Short preview of excluded files (all lowercase):
-      "bonescrew_logo_red.jpg", "bostongreen.jpg", "pict84_small.jpg", "pot40full_small.jpg",
-      "onlinestoregif.gif", "video2small.gif", "workshirt.gif", "blood1.gif",
-      "mp3logo2.jpg", "wbcnlogo.gif", "ravensspitbanner.jpg", "pict37_small.jpg",
-      // Pattern-based rule
-      ...Array.from({ length: 300 }, (_, i) => `pict${i}_small.jpg`)
-    ]);
+    const manualExclusions = [
+      "bonescrew_logo_red.jpg", "bostongreen.jpg", "onlinestoregif.gif", "video2small.gif",
+      "workshirt.gif", "blood1.gif", "mp3logo2.jpg", "wbcnlogo.gif", "ravensspitbanner.jpg"
+      // Add any more here if needed
+    ];
+
+    const excluded = new Set(manualExclusions.map(name => name.toLowerCase()));
+
+    // Add rule-based exclusions (e.g., *_small.jpg)
+    for (let i = 0; i < 500; i++) {
+      excluded.add(`pict${i}_small.jpg`);
+    }
 
     function isExcluded(filename) {
       return excluded.has(filename.toLowerCase()) || filename.toLowerCase().endsWith("_small.jpg");
