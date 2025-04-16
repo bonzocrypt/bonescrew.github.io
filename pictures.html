@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bonescrew - Pictures</title>
   <meta name="description" content="Bonescrew Pictures" />
-  <link rel="icon" href="https://raw.githubusercontent.com/bonzocrypt/bonescrew.github.io/main/images/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   <style>
     * {
       margin: 0;
@@ -70,15 +70,22 @@
     main {
       flex: 1;
       padding: 2rem 1rem;
-      background-color: #000;
       text-align: center;
     }
 
-    main img {
+    .photo-gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .photo-gallery img {
       max-width: 90%;
       height: auto;
-      margin-top: 1rem;
       border-radius: 8px;
+      border: 1px solid #444;
     }
 
     footer {
@@ -92,7 +99,7 @@
 <body>
   <div id="container">
     <header>
-      <img src="https://raw.githubusercontent.com/bonzocrypt/bonescrew.github.io/main/images/bonescrew_logo_red.jpg" alt="Bonescrew Logo" />
+      <img src="images/bonescrew_logo_red.jpg" alt="Bonescrew Logo" />
     </header>
 
     <nav>
@@ -106,7 +113,10 @@
 
     <main>
       <h1>Coming Soon...</h1>
-      <img src="https://raw.githubusercontent.com/bonzocrypt/bonescrew.github.io/main/images/h3.jpg" alt="Bonescrew Live" />
+      <div class="photo-gallery">
+        <img src="images/h3.jpg" alt="Bonescrew Live Photo" />
+        <!-- Add more <img> tags here as you add new pictures -->
+      </div>
     </main>
 
     <footer>
