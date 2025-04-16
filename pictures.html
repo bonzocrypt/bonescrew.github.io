@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bonescrew - Pictures</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Bonescrew Picture Gallery" />
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
       background-color: #000;
       color: #fff;
+      font-family: Arial, sans-serif;
     }
 
     header {
@@ -113,18 +113,23 @@
 
   <script>
     const excluded = new Set([
-      /* your full excluded image list is preserved here */
+      // Short preview of excluded files (all lowercase):
+      "bonescrew_logo_red.jpg", "bostongreen.jpg", "pict84_small.jpg", "pot40full_small.jpg",
+      "onlinestoregif.gif", "video2small.gif", "workshirt.gif", "blood1.gif",
+      "mp3logo2.jpg", "wbcnlogo.gif", "ravensspitbanner.jpg", "pict37_small.jpg",
+      // Pattern-based rule
+      ...Array.from({ length: 300 }, (_, i) => `pict${i}_small.jpg`)
     ]);
 
     function isExcluded(filename) {
-      return excluded.has(filename) || filename.toLowerCase().endsWith("_small.jpg");
+      return excluded.has(filename.toLowerCase()) || filename.toLowerCase().endsWith("_small.jpg");
     }
 
     fetch("https://api.github.com/repos/bonzocrypt/bonescrew.github.io/contents/images")
-      .then((res) => res.json())
-      .then((files) => {
+      .then(res => res.json())
+      .then(files => {
         const gallery = document.getElementById("gallery");
-        files.forEach((file) => {
+        files.forEach(file => {
           if (file.type === "file" && /\.(jpe?g|png|gif|webp)$/i.test(file.name)) {
             if (!isExcluded(file.name)) {
               const div = document.createElement("div");
@@ -135,7 +140,7 @@
           }
         });
       })
-      .catch((err) => {
+      .catch(err => {
         document.getElementById("gallery").innerText = "Unable to load images.";
         console.error(err);
       });
