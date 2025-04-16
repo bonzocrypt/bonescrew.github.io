@@ -1,40 +1,94 @@
 <!DOCTYPE html>
-<!-- saved from url=(0031)https://bonescrew.net/index.htm -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bonescrew</title>
-  <meta name="description" content="Bonescrew Hompage">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://bonescrew.net/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
-  <link href="./Bonescrew_files/bonescrew.css" rel="stylesheet" type="text/css">
-
-
+  <meta name="description" content="Bonescrew Homepage" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      height: 100%;
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    #container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      text-align: center;
+      padding: 1rem;
+    }
+    header img {
+      max-width: 100%;
+      height: auto;
+    }
+    nav {
+      text-align: center;
+      margin: 1rem 0;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      border: 1px solid white;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background-color: white;
+      color: black;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+    main img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
-<body><br>
-<div id="container">
-<header>
-   <img src="./Bonescrew_files/bonescrew_logo_red.jpg">
-</header>
-
-<nav>
-<ul>
-  <li><a href="https://bonescrew.net/index.htm">Home</a></li> 
-  <li><a href="https://bonescrew.net/audio.htm">Audio</a></li> 
-  <li><a href="https://bonescrew.net/pictures.htm">Pictures</a></li> 
-  <li><a href="https://bonescrew.net/videos.htm">Videos</a></li> 
-</ul></nav>
-
-
-
-<main>
-<img src="./Bonescrew_files/bostongreen.jpg">
-	
-
-</main>
-	<footer>
-	© 2000 Bonescrew. All Rights Reserved.<br>
-	</footer>
-
-</div>
-
-</body></html>
+<body>
+  <div id="container">
+    <header>
+      <img src="images/bonescrew_logo_red.jpg" alt="Bonescrew Logo" />
+    </header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="audio.html">Audio</a></li>
+        <li><a href="pictures.html">Pictures</a></li>
+        <li><a href="videos.html">Videos</a></li>
+      </ul>
+    </nav>
+    <main>
+      <img src="images/bostongreen.jpg" alt="Boston Green" />
+    </main>
+    <footer>
+      © 2000 Bonescrew. All Rights Reserved.
+    </footer>
+  </div>
+</body>
+</html>
