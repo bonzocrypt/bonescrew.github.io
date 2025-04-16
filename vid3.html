@@ -1,65 +1,134 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Bonescrew</title>
-  <meta name="description" content="Bonescrew Videos">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
-  <link href="bonescrew.css" rel="stylesheet" type="text/css">
+  <meta charset="utf-8" />
+  <title>Bonescrew - Videos Page 3</title>
+  <meta name="description" content="Bonescrew Videos" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
+  <link href="bonescrew.css" rel="stylesheet" type="text/css" />
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
 
+    header {
+      text-align: center;
+      padding: 1rem;
+    }
 
+    header img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      background-color: #000;
+      padding: 1rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+      margin: 2rem 0;
+      border-radius: 8px;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+
+    .pagination a {
+      color: #fff;
+      border: 1px solid #fff;
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+    .pagination a.active {
+      background-color: #fff;
+      color: #000;
+    }
+
+    .pagination a:hover {
+      background-color: #fff;
+      color: #000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      background-color: #000;
+    }
+  </style>
 </head>
-<body><br>
-<div id="container">
-<header>
-   <img src="images/bonescrew_logo_red.jpg">
-</header>
+<body>
+  <div id="container">
+    <header>
+      <img src="images/bonescrew_logo_red.jpg" alt="Bonescrew Logo" />
+    </header>
 
-<nav>
-<ul>
-  <li><a href="index.htm">Home</a></li> 
-  <li><a href="audio.htm">Audio</a></li> 
-  <li><a href="pictures.htm">Pictures</a></li> 
-  <li><a href="videos.htm">Videos</a></li> 
-</ul></nav>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="audio.html">Audio</a>
+      <a href="pictures.html">Pictures</a>
+      <a href="videos.html">Videos</a>
+    </nav>
 
+    <main>
+      <h1>Bonescrew Videos - Page 3</h1>
 
+      <iframe src="https://www.youtube.com/embed/QYsFZHdp_YQ" title="YouTube video 1" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/z3xeux4ZVpU" title="YouTube video 2" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/F2QZE5SEIZ4" title="YouTube video 3" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/31w7PXV0bQM" title="YouTube video 4" allowfullscreen></iframe>
 
-<main><br>
-<h1>Bonescrew Videos - page 3</h1>
+      <div class="pagination">
+        <a href="vid2.html">&laquo;</a>
+        <a href="videos.html">1</a>
+        <a href="vid2.html">2</a>
+        <a href="vid3.html" class="active">3</a>
+        <a href="vid4.html">4</a>
+        <a href="vid4.html">&raquo;</a>
+      </div>
+    </main>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/QYsFZHdp_YQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<br><br><br><br>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/z3xeux4ZVpU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<br><br><br><br>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/F2QZE5SEIZ4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<br><br><br><br>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/31w7PXV0bQM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
-<br><br><br>
-<div class="center">
-  <div class="pagination">
-  <a href="vid2.htm">&laquo;</a>
-  <a href="videos.htm">1</a>
-  <a href="vid2.htm">2</a>
-  <a href="vid3.htm" class="active">3</a>
-  <a href="vid4.htm">4</a>
-  <a href="vid4.htm">&raquo;</a>
+    <footer>
+      &copy; 2000 Bonescrew. All Rights Reserved.
+    </footer>
   </div>
-</div>
-
-</main>
-
-<br>
-	<footer>
-	&copy; 2000 Bonescrew. All Rights Reserved.<br>
-	</footer>
-
-</div>
 </body>
 </html>
